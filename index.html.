@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090906">
+<title>RAJA PREDICTION</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 50% 35%, #29200b 0%, #100e07 48%, #080806 100%);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+  padding: 0;
+}
+
+.page {
+  width: calc(100% - 24px);
+  max-width: 650px;
+  height: 84svh;
+  max-height: 760px;
+  min-height: 0;
+  border: 1px solid rgba(220,176,76,.48);
+  border-radius: 32px;
+  background: linear-gradient(145deg,
+    rgba(40,33,15,.75),
+    rgba(12,12,8,.96) 55%,
+    rgba(35,27,11,.75));
+  box-shadow: 0 0 30px rgba(222,169,54,.09),
+              inset 0 0 30px rgba(213,164,49,.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 18px 20px;
+}
+
+.badge {
+  border: 1px solid rgba(229,181,79,.5);
+  border-radius: 30px;
+  padding: 9px 16px;
+  color: #f4d28a;
+  font-size: clamp(9px, 2.5vw, 14px);
+  font-weight: bold;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  background: rgba(255,195,70,.05);
+}
+
+.dot {
+  color: #42e6a1;
+  margin-right: 7px;
+}
+
+.logo {
+  width: clamp(105px, 27vw, 190px);
+  aspect-ratio: 1;
+  border: 5px solid #eab842;
+  border-radius: 28px;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(238,177,48,.18);
+}
+
+h1 {
+  color: #f5d17d;
+  font-size: clamp(25px, 6.5vw, 48px);
+  font-weight: 900;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.tagline {
+  color: #c4b38b;
+  font-size: clamp(9px, 2.6vw, 15px);
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-top: -5px;
+}
+
+.line {
+  width: 85px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e9b63e, transparent);
+}
+
+h2 {
+  font-size: clamp(19px, 4.5vw, 29px);
+  color: #fff5dc;
+}
+
+h2 span {
+  color: #f0bb4d;
+}
+
+.description {
+  color: #aaa18d;
+  font-size: clamp(12px, 3.2vw, 19px);
+  line-height: 1.6;
+  max-width: 460px;
+}
+
+.features {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+}
+
+.feature {
+  border: 1px solid rgba(210,174,92,.27);
+  border-radius: 19px;
+  background: rgba(255,197,75,.035);
+  padding: 13px 3px;
+  min-width: 0;
+}
+
+.emoji {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.feature strong {
+  display: block;
+  color: #f0d49c;
+  font-size: clamp(10px, 2.7vw, 15px);
+  white-space: nowrap;
+}
+
+.feature small {
+  display: block;
+  color: #928979;
+  font-size: clamp(9px, 2.5vw, 13px);
+  margin-top: 7px;
+}
+
+.join {
+  display: flex;
+  width: 100%;
+  min-height: 55px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: linear-gradient(100deg, #f6c54f, #df9e17, #f7cc65);
+  border: 2px solid #f3d38b;
+  color: #171108;
+  font-size: clamp(14px, 3.8vw, 22px);
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-decoration: none;
+  box-shadow: 0 5px 18px rgba(235,173,46,.12);
+}
+
+.disclaimer {
+  color: #827a68;
+  font-size: clamp(9px, 2.5vw, 14px);
+  line-height: 1.5;
+  max-width: 440px;
+}
+
+.footer {
+  color: #958365;
+  font-size: clamp(9px, 2.5vw, 13px);
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+/* Short mobile screens */
+@media (max-height: 700px) {
+  .page {
+    height: 88svh;
+    padding: 10px 15px;
+  }
+  .logo {
+    width: clamp(85px, 23vw, 125px);
+  }
+  .feature {
+    padding: 8px 2px;
+  }
+  .emoji {
+    margin-bottom: 4px;
+  }
+  .join {
+    min-height: 46px;
+  }
+}
+
+@media (max-width: 360px) {
+  .page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .features {
+    gap: 5px;
+  }
+  .feature {
+    border-radius: 14px;
+  }
+  .feature strong {
+    font-size: 9px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+  <div class="badge">
+    <span class="dot">●</span>
+    CRICKET INSIGHTS COMMUNITY
+  </div>
+
+  <img src="logo.jpg" class="logo" alt="Raja Prediction Logo">
+
+  <h1>RAJA PREDICTION</h1>
+
+  <div class="tagline">
+    ANALYSE • UNDERSTAND • DISCUSS
+  </div>
+
+  <div class="line"></div>
+
+  <h2>Think Beyond The <span>Game.</span></h2>
+
+  <p class="description">
+    Get match insights, cricket analysis and trading-related discussions in one community.
+  </p>
+
+  <div class="features">
+
+    <div class="feature">
+      <div class="emoji">🏏</div>
+      <strong>Match Analysis</strong>
+      <small>Match Insights</small>
+    </div>
+
+    <div class="feature">
+      <div class="emoji">📊</div>
+      <strong>Cricket Trends</strong>
+      <small>Game Research</small>
+    </div>
+
+    <div class="feature">
+      <div class="emoji">⚡</div>
+      <strong>Live Updates</strong>
+      <small>Community</small>
+    </div>
+
+  </div>
+
+  <a class="join"
+     href="https://t.me/+pwdqqIsnHeNhOTRl"
+     target="_blank"
+     rel="noopener">
+    JOIN THE COMMUNITY
+  </a>
+
+  <p class="disclaimer">
+    Cricket analysis involves uncertainty. Trading involves financial risk.
+    Make informed and responsible decisions.
+  </p>
+
+  <div class="footer">
+    WELCOME TO RAJA PREDICTION
+  </div>
+
+</main>
+
+</body>
+</html>
